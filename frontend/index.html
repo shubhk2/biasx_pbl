@@ -121,12 +121,13 @@
         <div class="col" id="model-type-group" style="display:none;">
           <div class="form-group">
             <label for="model-type">Train-on Model Type:</label>
-            <select id="model-type">
-              <option value="logistic_regression">Logistic Regression (No Fairness)</option>
-              <option value="prejudice_remover">Prejudice Remover (with LR baseline)</option>
-              <option value="neural_network">Neural Network (No Fairness)</option>
-              <option value="adversarial_debiasing">Adversarial Debiasing (with NN baseline)</option>
-            </select>
+              <select id="model-type">
+                <option value="logistic_regression">Logistic Regression (No Fairness)</option>
+                <option value="prejudice_remover">Prejudice Remover (with LR baseline)</option>
+                <option value="neural_network">Neural Network (No Fairness)</option>
+                <option value="adversarial_debiasing">Adversarial Debiasing (with NN baseline)</option>
+                <option value="exponentiated_gradient_reduction">Exponentiated Gradient Reduction (LR + EGR)</option>
+              </select>
           </div>
         </div>
       </div>
@@ -232,13 +233,15 @@
         </p>
         <div class="form-group">
           <label for="mitigation-model-type">Mitigation Model Type:</label>
-          <select id="mitigation-model-type">
-            <option value="prejudice_remover">Logistic Regression vs Prejudice Remover</option>
-            <option value="adversarial_debiasing">Neural Network vs Adversarial Debiasing</option>
-            <option value="logistic_regression">Logistic Regression (baseline only)</option>
-            <option value="neural_network">Neural Network (baseline only)</option>
-          </select>
+            <select id="mitigation-model-type">
+              <option value="prejudice_remover">Logistic Regression vs Prejudice Remover</option>
+              <option value="exponentiated_gradient_reduction">Logistic Regression vs Exponentiated Gradient Reduction</option>
+              <option value="adversarial_debiasing">Neural Network vs Adversarial Debiasing</option>
+              <option value="logistic_regression">Logistic Regression (baseline only)</option>
+              <option value="neural_network">Neural Network (baseline only)</option>
+            </select>
         </div>
+
       </div>
 
       <button id="mitigate-btn">Apply Mitigation</button>

@@ -34,6 +34,7 @@ class BiasDetectionApp {
     document.getElementById('priv-val').addEventListener('change', () => this.onPrivilegedValueChange());
     document.getElementById('detection-type').addEventListener('change', () => this.onDetectionTypeChange());
     document.getElementById('model-input-mode').addEventListener('change', () => this.onModelInputModeChange());
+    
 
     // Bind file input change listener for prediction dataset
     document.getElementById('prediction-file').addEventListener('change', () => this.onPredictionFileSelected());
@@ -246,6 +247,7 @@ class BiasDetectionApp {
       modelTypeGroup.style.display = 'block';
     }
   }
+  
 
   onPredictionFileSelected() {
     // When a prediction file is selected, populate the column dropdowns
@@ -577,6 +579,7 @@ class BiasDetectionApp {
           model_type: modelType,
           selected_metrics: this.modelComparisonMetrics,
         };
+        
 
         console.log('Model mitigation payload:', payload);
         const response = await API.analyze(payload);
